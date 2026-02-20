@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../features/home/presentation/screens/home_screen.dart';
+import 'package:solid_software_test_application/src/features/home/presentation/screens/home_screen.dart';
 
+/// Router provider keeps all routes
 final routerProvider = Provider<Map<String, Widget Function(BuildContext)>>(
+  // ignore: avoid_unused_parameters
   (ref) => {'/': (context) => const HomeScreen()},
 );

@@ -10,4 +10,8 @@ class ColorModel {
   ColorEntity toEntity() {
     return ColorEntity(alpha: alpha, red: red, blue: blue, green: green);
   }
+
+  factory ColorModel.fromEntity(ColorEntity entity) {
+    return ColorModel(entity.alpha, entity.red, entity.blue, entity.green);
+  }
 }

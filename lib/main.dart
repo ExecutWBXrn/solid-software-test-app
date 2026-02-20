@@ -5,6 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:solid_software_test_application/src/features/home/presentation/providers/providers.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     ProviderScope(
       overrides: [

@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:solid_software_test_application/src/core/routes/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:solid_software_test_application/src/features/home/presentation/providers/providers.dart';
 
-void main() {
-  runApp(ProviderScope(child: const MyApp()));
+Future<void> main() async {
+  runApp(
+    ProviderScope(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(
+          await SharedPreferences.getInstance(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {

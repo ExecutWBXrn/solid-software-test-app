@@ -21,12 +21,7 @@ class HomeScreen extends ConsumerWidget {
           backgroundColorValue.green,
           backgroundColorValue.blue,
         ),
-        body: const Center(
-          child: Text(
-            "Hello there",
-            style: TextStyle(backgroundColor: Colors.white),
-          ),
-        ),
+        body: const Center(child: Text("Hello there")),
       ),
     );
   }

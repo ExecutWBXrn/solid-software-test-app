@@ -1,15 +1,18 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import '../providers/providers.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:solid_software_test_application/src/features/home/presentation/providers/providers.dart';
+
+/// Home Screen Page (main one)
 class HomeScreen extends ConsumerStatefulWidget {
+  /// initializer
   const HomeScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => HomeScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _HomeScreenState();
 }
 
-class HomeScreenState extends ConsumerState<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final backgroundColorValue = ref.watch(backgroundColorNotifierProvider);
@@ -18,9 +21,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
     );
 
     return GestureDetector(
-      onTap: () {
-        backgroundColorNotifier.generateRandomColor();
-      },
+      onTap: backgroundColorNotifier.generateRandomColor,
       child: Scaffold(
         body: AnimatedContainer(
           color: Color.fromARGB(
@@ -29,7 +30,7 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
             backgroundColorValue.green,
             backgroundColorValue.blue,
           ),
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           child: const Center(child: Text("Hello there")),
         ),
       ),

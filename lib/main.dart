@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:solid_software_test_application/src/core/routes/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:solid_software_test_application/src/core/routes/routes.dart';
 import 'package:solid_software_test_application/src/features/home/presentation/providers/providers.dart';
 
 Future<void> main() async {
@@ -14,13 +14,14 @@ Future<void> main() async {
           await SharedPreferences.getInstance(),
         ),
       ],
-      child: const MyApp(),
+      child: const _MyApp(),
     ),
   );
 }
 
-class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
+// ignore: prefer_match_file_name
+class _MyApp extends ConsumerWidget {
+  const _MyApp();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

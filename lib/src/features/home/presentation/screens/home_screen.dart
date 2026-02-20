@@ -18,15 +18,20 @@ class HomeScreenState extends ConsumerState<HomeScreen> {
     );
 
     return GestureDetector(
-      onTap: () => backgroundColorNotifier.generateRandomColor(),
+      onTap: () {
+        backgroundColorNotifier.generateRandomColor();
+      },
       child: Scaffold(
-        backgroundColor: Color.fromARGB(
-          backgroundColorValue.alpha,
-          backgroundColorValue.red,
-          backgroundColorValue.green,
-          backgroundColorValue.blue,
+        body: AnimatedContainer(
+          color: Color.fromARGB(
+            backgroundColorValue.alpha,
+            backgroundColorValue.red,
+            backgroundColorValue.green,
+            backgroundColorValue.blue,
+          ),
+          duration: Duration(milliseconds: 300),
+          child: const Center(child: Text("Hello there")),
         ),
-        body: const Center(child: Text("Hello there")),
       ),
     );
   }

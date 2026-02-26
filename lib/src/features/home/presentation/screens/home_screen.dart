@@ -15,7 +15,9 @@ class HomeScreen extends ConsumerStatefulWidget {
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final backgroundColorValue = ref.watch(backgroundColorNotifierProvider);
+    final backgroundColorValue = ref.watch(
+      backgroundColorNotifierProvider,
+    );
     final backgroundColorNotifier = ref.read(
       backgroundColorNotifierProvider.notifier,
     );

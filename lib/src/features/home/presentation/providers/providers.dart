@@ -6,6 +6,7 @@ import 'package:solid_software_test_application/src/features/home/data/repositor
 import 'package:solid_software_test_application/src/features/home/domain/entities/color_entity.dart';
 import 'package:solid_software_test_application/src/features/home/domain/repositories/color_repository.dart';
 import 'package:solid_software_test_application/src/features/home/presentation/notifiers/background_color_notifier.dart';
+import 'package:solid_software_test_application/src/features/home/domain/usecases/generate_random_color_usecase.dart';
 
 /// Shared preferences provider (override in main.dart)
 // ignore: avoid_unused_parameters
@@ -21,6 +22,11 @@ final colorLocalDsProvider = Provider<ColorLocalDs>(
 /// Color repository provider
 final colorRepositoryProvider = Provider<ColorRepository>(
   (ref) => ColorRepositoryImpl(ref.read(colorLocalDsProvider)),
+);
+
+/// Generate random color use case provider
+final generateRandomColorUseCaseProvider = Provider<GenerateRandomColorUseCase>(
+  (_) => GenerateRandomColorUseCase(),
 );
 
 /// Background color notifier provider

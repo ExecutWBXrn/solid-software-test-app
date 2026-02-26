@@ -3,17 +3,18 @@ import 'package:solid_software_test_application/src/features/home/domain/entitie
 
 /// Generate random color use case
 class GenerateRandomColorUseCase {
+  /// Maximal value for color
+  static const maxColorValue = 255;
+
   /// call method
   ColorEntity call() {
+    final random = Random();
+
     return ColorEntity(
-      // ignore: no_magic_number
-      alpha: 255,
-      // ignore: no_magic_number
-      red: Random().nextInt(256),
-      // ignore: no_magic_number
-      blue: Random().nextInt(256),
-      // ignore: no_magic_number
-      green: Random().nextInt(256),
+      alpha: maxColorValue,
+      red: random.nextInt(maxColorValue + 1),
+      green: random.nextInt(maxColorValue + 1),
+      blue: random.nextInt(maxColorValue + 1),
     );
   }
 }

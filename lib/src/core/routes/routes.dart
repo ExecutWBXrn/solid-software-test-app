@@ -4,6 +4,5 @@ import 'package:solid_software_test_application/src/features/home/presentation/s
 
 /// Router provider keeps all routes
 final routerProvider = Provider<Map<String, Widget Function(BuildContext)>>(
-  // ignore: avoid_unused_parameters
-  (ref) => {'/': (context) => const HomeScreen()},
+  (_) => {'/': (context) => const HomeScreen()},
 );
